@@ -13,6 +13,9 @@ public class Produto {
     @Column
     private String descricao;
 
+    @ManyToOne
+    @JoinColumn(name = "id_filial")
+    private Filial filial;
 
     //-------------------------------------------------
 
@@ -31,5 +34,13 @@ public class Produto {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public Filial getFilial() {
+        return filial;
+    }
+
+    public void setFilial(Filial filial) {
+        this.filial = filial;
     }
 }
