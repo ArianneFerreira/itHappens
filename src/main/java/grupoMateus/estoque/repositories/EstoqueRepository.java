@@ -10,5 +10,8 @@ import java.util.List;
 @Repository
 public interface EstoqueRepository  extends JpaRepository<Estoque, Long> {
 
+    List<Estoque> findAllByFilial(Filial filial);
+
+    List<Estoque> findAllByQuantidadeTotalGreaterThanEqual(int quantidade);
 
 }

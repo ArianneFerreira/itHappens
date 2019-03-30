@@ -1,7 +1,6 @@
 package grupoMateus.estoque.models;
 
 import javax.persistence.*;
-import java.awt.color.ProfileDataException;
 
 @Entity
 @Table(name = "estoque")
@@ -12,7 +11,7 @@ public class Estoque {
     private Long id;
 
     @Column
-    private int quantidade_total;
+    private int quantidadeTotal;
 
     @ManyToOne
     @JoinColumn(name = "id_produto")
@@ -33,12 +32,12 @@ public class Estoque {
         this.id = id;
     }
 
-    public int getQuantidade_total() {
-        return quantidade_total;
+    public int getQuantidadeTotal() {
+        return quantidadeTotal;
     }
 
-    public void setQuantidade_total(int quantidade_total) {
-        this.quantidade_total = quantidade_total;
+    public void setQuantidadeTotal(int quantidadeTotal) {
+        this.quantidadeTotal = quantidadeTotal;
     }
 
     public Produto getProduto() {
