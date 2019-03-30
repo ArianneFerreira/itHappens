@@ -3,7 +3,7 @@ package grupoMateus.estoque.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "pedido_estoque")
+@Table(name = "pedido-estoque")
 public class PedidoEstoque {
 
     @Id

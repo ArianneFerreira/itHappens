@@ -21,8 +21,13 @@ public class EstoqueController {
     private FilialRepository filialRepository;
 
     @RequestMapping(value = "/estoques", method = RequestMethod.POST)
-    public void salvar(@RequestBody Estoque estoque){
-        estoqueRepository.save(estoque);
+    public void salvar(@RequestBody Estoque estoque) {
+        Estoque jaExiste = this.estoqueRepository.findByFilialAndProduto(estoque.getFilial(), estoque.getProduto());
+        if(jaExiste != null && jaExiste.getId() != null) {
+            return;
+        } else {
+            this.estoqueRepository.save(estoque);
+        }
     }
 
     @RequestMapping(value = "/estoques")
